@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Lark Bowen</title>
+
+  <!-- Google Fonts & Phosphor Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    :root {
+      --primary-color: #60a5fa;
+      --primary-accent: #3b82f6;
+      --header-bg: #0f172a;
+      --panel-bg: #1e293b;
+      --page-bg: #0b0f19;
+      --border-color: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --badge-bg: #334155;
+      --badge-text: #e2e8f0;
+      --radius: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--page-bg);
+      color: var(--text-main);
+      padding-bottom: 50px;
+      min-height: 100vh;
+    }
+
+    /* Embedded & Standalone Header */
+    header {
+      background: var(--header-bg);
+      color: #ffffff;
+      padding: 1rem 1.25rem;
+      border-bottom: 3px solid var(--primary-accent);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav-link-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .nav-link-btn:hover {
+      background: var(--panel-bg);
+      border-color: var(--primary-accent);
+    }
+
+    .brand-title h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #f8fafc;
+    }
+
+    .brand-title p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Container Layout */
+    .container {
+      max-width: 1050px;
+      margin: 1.5rem auto 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Narrative Bio Cards */
+    .bio-card {
+      background: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .bio-header {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .bio-content {
+      color: #cbd5e1;
+      line-height: 1.75;
+      font-size: 0.98rem;
+    }
+
+    /* 2-Column Split: Text + Featured Image */
+    .bio-split {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .bio-split {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .featured-img-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .featured-img {
+      width: 100%;
+      max-width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 2px solid var(--primary-accent);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Image Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      background: #0f172a;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary-color);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="index.html" class="nav-link-btn">
+          <i class="ph ph-arrow-left"></i> Song List
+        </a>
+        <div class="brand-title">
+          <h1>About Lark Bowen</h1>
+          <p>Vocal Training, Performance & Second Life</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Section 1: Classical Training & Accomplishments -->
+    <section class="bio-card">
+      <div class="bio-header">
+        <i class="ph ph-music-notes"></i> The Musical Journey
+      </div>
+      <div class="bio-split">
+        <div class="bio-content">
+          <p style="margin-bottom: 1rem;">
+            Lark's passion and talent blossomed with over 10 years of Vocal Training and Study through private lessons and too many classes which led to a Degree in Vocal Performance with concentrations in Classical Music, Opera, Broadway and some other boring but hard to sing stuff. (And to be honest, she probably doesn't remember much from the Music Theory or Music History courses). Many hours of boring homework led to listening to the radio which led to a love of popular music in all genres.
+          </p>
+          <p>
+            During those many years of study, she accomplished many things. Aside from actually graduating (which was a miracle in itself), she was able to lend her voice to a number of choirs and musical ensembles, musicals, solo concert recitals, and her favorite, a cameo on a Disney Radio Christmas Production of <em>A Christmas Carol</em>. Her crowning glory was her opportunity to rehearse with "America's Choir."
+          </p>
+        </div>
+        <div class="featured-img-wrap">
+          <img 
+            src="https://lh3.googleusercontent.com/d/1cPLbEwSpPo4_aZBuW0M44Zsv-blgfaM5" 
+            alt="Lark Bowen Performance" 
+            class="featured-img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Second Life & The Stage -->
+    <section class="bio-card">
+      <div class="bio-header">
+        <i class="ph ph-sparkle"></i> The Digital Stage & Second Life
+      </div>
+      <div class="bio-split">
+        <div class="featured-img-wrap">
+          <img 
+            src="https://lh3.googleusercontent.com/d/1sb1zyAu-x3ow1xr5h_GwHW09p3M4tA0v" 
+            alt="Lark Bowen Second Life" 
+            class="featured-img"
+            loading="lazy"
+          />
+        </div>
+        <div class="bio-content">
+          <p>
+            She left the world of music behind upon graduation till many years later when she discovered Second Life. Through the help and support of Amazing Friends and Family, she found her way to her true love, Performing. Lark might be performing in her pajamas with her bun buns hopping around her real life feet, but she keeps her Second Life followers wanting more of her beautiful and charismatic personality with every performance doing what she loves the most!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Photo Gallery -->
+    <section class="bio-card">
+      <div class="bio-header">
+        <i class="ph ph-images"></i> Gallery
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img 
+            src="https://lh3.googleusercontent.com/d/1IRM0WAjvP-CfSdMX3P2CZp26LltBSgWQ" 
+            alt="Lark Bowen Gallery 1" 
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+        <div class="gallery-item">
+          <img 
+            src="https://lh3.googleusercontent.com/d/1tHd1LHrj1DniXTX87hQD9yWhWyR8-JiO" 
+            alt="Lark Bowen Gallery 2" 
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+        <div class="gallery-item">
+          <img 
+            src="https://lh3.googleusercontent.com/d/1JS7-JHUWLCZS8ZzpruUFFrSpsWbdYLvi" 
+            alt="Lark Bowen Gallery 3" 
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+        <div class="gallery-item">
+          <img 
+            src="https://lh3.googleusercontent.com/d/1dVtd5oYv4-9naBrXRI0wqkSSbq7n7osy" 
+            alt="Lark Bowen Gallery 4" 
+            class="gallery-img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
